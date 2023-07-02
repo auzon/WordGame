@@ -1,9 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
 using TMPro;
-using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class LetterBox : MonoBehaviour
