@@ -1,10 +1,10 @@
 using TMPro;
 using UnityEngine;
 
-public class Key : MonoBehaviour
+public class LetterButton : MonoBehaviour
 {
     // fields
-    private string letter;
+    private LetterBoxList letterBoxList;
 
     // components
     private TextMeshPro textMeshPro;
@@ -12,10 +12,12 @@ public class Key : MonoBehaviour
     private void Start()
     {
         textMeshPro = GetComponentInChildren<TextMeshPro>();
+        letterBoxList = FindObjectOfType<LetterBoxList>();
     }
 
     private void OnMouseDown()
     {
-        Debug.Log("Pressed key: " + textMeshPro.text);
+        char letterChar = textMeshPro.text.ToCharArray()[0];
+        letterBoxList.SetLetter(letterChar);
     }
 }

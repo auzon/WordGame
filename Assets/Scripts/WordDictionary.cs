@@ -2,23 +2,38 @@ using UnityEngine;
 
 public class WordDictionary : MonoBehaviour
 {
-    [SerializeField] private TextAsset wordsJson;
-    private WordList words;
+    [SerializeField] private TextAsset wordsTA;
+    private WordsJson wordsJson;
 
-    public WordList Words
+
+    public WordsJson Words
     {
-        get { return words; }
+        get { return wordsJson; }
     }
 
-    private void Start()
+    private void Awake()
     {
-        words = JsonUtility.FromJson<WordList>(wordsJson.text);
+        wordsJson = JsonUtility.FromJson<WordsJson>(wordsTA.text);
+    }
+
+    public Word GetRandomWord()
+    {
+        int wordLength = GameManager.Instance.WordLength;
+        int index = Random.Range(0, wordsJson.words.Length);
+        if (wordsJson.words[index].entry.Length == wordLength)
+        {
+            return wordsJson.words[index];
+        }
+        else
+        {
+            return GetRandomWord();
+        }
     }
 
 }
 
 [System.Serializable]
-public class WordList
+public class WordsJson
 {
     public Word[] words;
 }
