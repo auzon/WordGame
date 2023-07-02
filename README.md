@@ -10,4 +10,4 @@ Some screenshots:
 ![Main Menu Scene Screenshot](/Screenshots/MainMenuScene.png?raw=true "Main Menu Scene")
 
 ## In Game
-![Run Scene Screenshot](/Screenshots/MainMenuScene.png?raw=true "Run Scene")
+![Run Scene Screenshot](/Screenshots/RunScene.png?raw=true "Run Scene")
